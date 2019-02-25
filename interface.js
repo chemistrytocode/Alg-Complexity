@@ -1,35 +1,30 @@
-var type = ""
-var numberOfIterations = 1;
-
-
-$(document).ready(function() {
-})
+// $(document).ready(function() {
+// })
 
 function returnId(id) {
-  type = id
+  var type = id
+  generateResults()
 
-  generateResults(id)
-
-  function generateResults(id) {
+  function generateResults() {
     var data = [];
     $("#colName").text(type)
-    var colIdentifier = id
-    console.log(colIdentifier)
+    populateDataArray()
 
-    var colName = $("#colName");
-    // var colIdentifier = colName.text();
+    function populateDataArray() {
+      var numberOfIterations = 1;
+      var colIdentifier = type
 
-    while (numberOfIterations <= 10) {
-      var test = timeTesting(
-        numberOfIterations * 50000,
-        eval(colIdentifier.toLowerCase()),
-        100
-      );
-      $(`#t${numberOfIterations}r1`).text(test);
-      data.push(test);
-      numberOfIterations++;
+      while (numberOfIterations <= 10) {
+        var test = timeTesting(
+          numberOfIterations * 50000,
+          eval(colIdentifier),
+          100
+        );
+        $(`#t${numberOfIterations}r1`).text(test);
+        data.push(test);
+        numberOfIterations++;
+      }
     }
-
 
   var ctx = document.getElementById("myChart").getContext("2d");
   var chart = new Chart(ctx, {
