@@ -38,6 +38,6 @@ function timeTesting(size, fn, repeat) {
     var t0 = performance.now();
     fn(test);
     var t1 = performance.now();
-    console.log(`Call took ` + (t1 - t0) + ` milliseconds`);
+    return (t1 - t0).toFixed(3);
   }
 }
