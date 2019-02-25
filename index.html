@@ -1,50 +1,104 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <title>OH HEY!</title>
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
     <script src="src/Timing.js"></script>
     <script src="interface.js"></script>
-
   </head>
   <body>
+    <style type="text/css">
+      .tg {
+        border-collapse: collapse;
+        border-spacing: 0;
+      }
+      .tg td {
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+        padding: 10px 5px;
+        border-style: solid;
+        border-width: 1px;
+        overflow: hidden;
+        word-break: normal;
+        border-color: black;
+      }
+      .tg th {
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+        font-weight: normal;
+        padding: 10px 5px;
+        border-style: solid;
+        border-width: 1px;
+        overflow: hidden;
+        word-break: normal;
+        border-color: black;
+      }
+      .tg .tg-baqh {
+        text-align: center;
+        vertical-align: top;
+      }
+      .tg .tg-c3ow {
+        border-color: inherit;
+        text-align: center;
+        vertical-align: top;
+      }
+    </style>
+    <button type = "button" id="reverse" onclick="returnId(this.id)"> Reverse </button>
+    <button type = "button" id="sort" onclick="returnId(this.id)"> Sort </button>
+    <table class="tg">
+      <tr>
+        <th class="tg-c3ow" colspan="6" id="colName">Reverse</th>
+      </tr>
+      <tr>
+        <td class="tg-c3ow">Items in Array</td>
+        <td class="tg-baqh" colspan="3">Average</td>
+      </tr>
+      <tr>
+        <td class="tg-c3ow">50000</td>
+        <td class="tg-baqh" id="t1r1"></td>
+      </tr>
+      <tr>
+        <td class="tg-c3ow">100000</td>
+        <td class="tg-baqh" id="t2r1"></td>
+      </tr>
+      <tr>
+        <td class="tg-baqh">150000</td>
+        <td class="tg-baqh" id="t3r1"></td>
+      </tr>
+      <tr>
+        <td class="tg-baqh">200000</td>
+        <td class="tg-baqh" id="t4r1"></td>
+      </tr>
+      <tr>
+        <td class="tg-baqh">250000</td>
+        <td class="tg-baqh" id="t5r1"></td>
+      </tr>
+      <tr>
+        <td class="tg-baqh">300000</td>
+        <td class="tg-baqh" id="t6r1"></td>
+      </tr>
+      <tr>
+        <td class="tg-baqh">350000</td>
+        <td class="tg-baqh" id="t7r1"></td>
+      </tr>
+      <tr>
+        <td class="tg-baqh">400000</td>
+        <td class="tg-baqh" id="t8r1"></td>
+      </tr>
+      <tr>
+        <td class="tg-baqh">450000</td>
+        <td class="tg-baqh" id="t9r1"></td>
 
+      </tr>
+      <tr>
+        <td class="tg-baqh">500000</td>
+        <td class="tg-baqh" id="t10r1"></td>
+
+      </tr>
+    </table>
+
+    <canvas id="myChart"></canvas>
   </body>
 </html>
-<style type="text/css">
-.tg  {border-collapse:collapse;border-spacing:0;}
-.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
-.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
-.tg .tg-baqh{text-align:center;vertical-align:top}
-.tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top}
-</style>
-<table class="tg">
-  <tr>
-    <th class="tg-c3ow" colspan="6">Reverse</th>
-  </tr>
-  <tr>
-    <td class="tg-c3ow">Items in Array</td>
-    <td class="tg-baqh">Average</td>
-  </tr>
-  <tr>
-    <td class="tg-c3ow">50000</td>
-    <td class="tg-baqh" id="t1r1"></td>
-  </tr>
-  <tr>
-    <td class="tg-c3ow">100000</td>
-    <td class="tg-baqh" id="t2r1"></td>
-  </tr>
-  <tr>
-    <td class="tg-baqh">150000</td>
-    <td class="tg-baqh" id="t3r1"></td>
-  </tr>
-  <tr>
-    <td class="tg-baqh">200000</td>
-    <td class="tg-baqh" id="t4r1"></td>
-  </tr>
-  <tr>
-    <td class="tg-baqh">250000</td>
-    <td class="tg-baqh" id="t5r1"></td>
-  </tr>
-</table>

@@ -1,3 +1,4 @@
+
 function last(array) {
   return array[array.length - 1];
 }
@@ -31,13 +32,23 @@ function createArray(size) {
   return array;
 }
 
+function averager(array) {
+  total = 0
+  array.forEach(number => {total += number})
+  return(total/ array.length);
+}
+
 function timeTesting(size, fn, repeat) {
   test = [];
   test = this.createArray(size);
+  averagingArray= []
   for (var i = 0; i < repeat; i++) {
     var t0 = performance.now();
     fn(test);
     var t1 = performance.now();
-    return (t1 - t0).toFixed(3);
+    averagingArray.push(t1-t0)
   }
+  var average = averager(averagingArray)
+  var rounded = Math.floor((average)*100000)/100000
+  return (rounded.toFixed(5))
 }
