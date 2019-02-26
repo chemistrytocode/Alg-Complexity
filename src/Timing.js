@@ -1,6 +1,6 @@
 // Actions on array:
 function last(array) {
-  array[array.length - 1];
+  return array[array.length - 1];
 }
 
 function shuffle(array) {
@@ -13,15 +13,29 @@ function shuffle(array) {
     array[counter] = array[index];
     array[index] = temp;
   }
-  array;
+  return array;
 }
 
 function reverse(array) {
-  array.reverse();
+  return array.reverse();
 }
 
 function sort(array) {
-  array.sort();
+  return array.sort();
+}
+
+function bubblesort(array) {
+  var length = array.length;
+  for (var i = length - 1; i >= 0; i--) {
+    for (var j = 1; j <= i; j++) {
+      if (array[j - 1] > array[j]) {
+        var temp = array[j - 1];
+        array[j - 1] = array[j];
+        array[j] = temp;
+      }
+    }
+  }
+  return array;
 }
 
 // measuring time:

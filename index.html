@@ -7,100 +7,124 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
     <script src="src/Timing.js"></script>
     <script src="interface.js"></script>
+    <link rel="stylesheet" href="stylesheet.css" type="text/css">
   </head>
+
   <body>
-    <style type="text/css">
-      .tg {
-        border-collapse: collapse;
-        border-spacing: 0;
-      }
-      .tg td {
-        font-family: Arial, sans-serif;
-        font-size: 14px;
-        padding: 10px 5px;
-        border-style: solid;
-        border-width: 1px;
-        overflow: hidden;
-        word-break: normal;
-        border-color: black;
-      }
-      .tg th {
-        font-family: Arial, sans-serif;
-        font-size: 14px;
-        font-weight: normal;
-        padding: 10px 5px;
-        border-style: solid;
-        border-width: 1px;
-        overflow: hidden;
-        word-break: normal;
-        border-color: black;
-      }
-      .tg .tg-baqh {
-        text-align: center;
-        vertical-align: top;
-      }
-      .tg .tg-c3ow {
-        border-color: inherit;
-        text-align: center;
-        vertical-align: top;
-      }
-    </style>
-    <button type = "button" id="reverse" onclick="returnId(this.id)"> Reverse </button>
-    <button type = "button" id="sort" onclick="returnId(this.id)"> Sort </button>
-    <button type = "button" id="shuffle" onclick="returnId(this.id)"> Shuffle </button>
-    <button type = "button" id="last" onclick="returnId(this.id)"> Last </button>
-    <table class="tg">
-      <tr>
-        <th class="tg-c3ow" colspan="6" id="colName">Reverse</th>
-      </tr>
-      <tr>
-        <td class="tg-c3ow">Items in Array</td>
-        <td class="tg-baqh" colspan="3">Average</td>
-      </tr>
-      <tr>
-        <td class="tg-c3ow">50000</td>
-        <td class="tg-baqh" id="t1r1"></td>
-      </tr>
-      <tr>
-        <td class="tg-c3ow">100000</td>
-        <td class="tg-baqh" id="t2r1"></td>
-      </tr>
-      <tr>
-        <td class="tg-baqh">150000</td>
-        <td class="tg-baqh" id="t3r1"></td>
-      </tr>
-      <tr>
-        <td class="tg-baqh">200000</td>
-        <td class="tg-baqh" id="t4r1"></td>
-      </tr>
-      <tr>
-        <td class="tg-baqh">250000</td>
-        <td class="tg-baqh" id="t5r1"></td>
-      </tr>
-      <tr>
-        <td class="tg-baqh">300000</td>
-        <td class="tg-baqh" id="t6r1"></td>
-      </tr>
-      <tr>
-        <td class="tg-baqh">350000</td>
-        <td class="tg-baqh" id="t7r1"></td>
-      </tr>
-      <tr>
-        <td class="tg-baqh">400000</td>
-        <td class="tg-baqh" id="t8r1"></td>
-      </tr>
-      <tr>
-        <td class="tg-baqh">450000</td>
-        <td class="tg-baqh" id="t9r1"></td>
+    <div id="container">
+      <h1>Amazing Graphs</h1>
+      <div id="button">
+        <button type="button" id="reverse" onclick="returnId(this.id)">
+          Reverse
+        </button>
+        <button type="button" id="sort" onclick="returnId(this.id)">
+          Sort
+        </button>
+        <button type="button" id="bubblesort" onclick="returnId(this.id)">
+          Bubblesort(V. Slow!)
+        </button>
+        <button type="button" id="shuffle" onclick="returnId(this.id)">
+          Shuffle
+        </button>
+        <button type="button" id="last" onclick="returnId(this.id)">
+          Last
+        </button>
 
-      </tr>
-      <tr>
-        <td class="tg-baqh">500000</td>
-        <td class="tg-baqh" id="t10r1"></td>
+      </div>
 
-      </tr>
-    </table>
+      <div id="table">
+        <table class="tg">
+          <tr>
+            <th class="tg-c3ow" colspan="6" id="colName">Reverse</th>
+          </tr>
+          <tr>
+            <td class="tg-c3ow">Items in Array</td>
+            <td class="tg-baqh" colspan="3">Average</td>
+          </tr>
+          <tr>
+            <td class="tg-c3ow">5000</td>
+            <td class="tg-baqh" id="t1r1"></td>
+          </tr>
+          <tr>
+            <td class="tg-c3ow">10000</td>
+            <td class="tg-baqh" id="t2r1"></td>
+          </tr>
+          <tr>
+            <td class="tg-baqh">15000</td>
+            <td class="tg-baqh" id="t3r1"></td>
+          </tr>
+          <tr>
+            <td class="tg-baqh">20000</td>
+            <td class="tg-baqh" id="t4r1"></td>
+          </tr>
+          <tr>
+            <td class="tg-baqh">25000</td>
+            <td class="tg-baqh" id="t5r1"></td>
+          </tr>
+          <tr>
+            <td class="tg-baqh">30000</td>
+            <td class="tg-baqh" id="t6r1"></td>
+          </tr>
+          <tr>
+            <td class="tg-baqh">35000</td>
+            <td class="tg-baqh" id="t7r1"></td>
+          </tr>
+          <tr>
+            <td class="tg-baqh">40000</td>
+            <td class="tg-baqh" id="t8r1"></td>
+          </tr>
+          <tr>
+            <td class="tg-baqh">45000</td>
+            <td class="tg-baqh" id="t9r1"></td>
+          </tr>
+          <tr>
+            <td class="tg-baqh">50000</td>
+            <td class="tg-baqh" id="t10r1"></td>
+          </tr>
+          <tr>
+            <td class="tg-c3ow">55000</td>
+            <td class="tg-baqh" id="t11r1"></td>
+          </tr>
+          <tr>
+            <td class="tg-c3ow">60000</td>
+            <td class="tg-baqh" id="t12r1"></td>
+          </tr>
+          <tr>
+            <td class="tg-baqh">65000</td>
+            <td class="tg-baqh" id="t13r1"></td>
+          </tr>
+          <tr>
+            <td class="tg-baqh">70000</td>
+            <td class="tg-baqh" id="t14r1"></td>
+          </tr>
+          <tr>
+            <td class="tg-baqh">75000</td>
+            <td class="tg-baqh" id="t15r1"></td>
+          </tr>
+          <tr>
+            <td class="tg-baqh">80000</td>
+            <td class="tg-baqh" id="t16r1"></td>
+          </tr>
+          <tr>
+            <td class="tg-baqh">85000</td>
+            <td class="tg-baqh" id="t17r1"></td>
+          </tr>
+          <tr>
+            <td class="tg-baqh">90000</td>
+            <td class="tg-baqh" id="t18r1"></td>
+          </tr>
+          <tr>
+            <td class="tg-baqh">95000</td>
+            <td class="tg-baqh" id="t19r1"></td>
+          </tr>
+          <tr>
+            <td class="tg-baqh">100000</td>
+            <td class="tg-baqh" id="t20r1"></td>
+          </tr>
+        </table>
+      </div>
 
-    <canvas id="myChart"></canvas>
+      <div id="graph"><canvas id="myChart"></canvas></div>
+    </div>
   </body>
 </html>
