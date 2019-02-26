@@ -15,13 +15,13 @@ function returnId(id) {
       var colIdentifier = type
 
       while (numberOfIterations <= 10) {
-        var test = timeTesting(
+        var time = timeTesting(
           numberOfIterations * 50000,
           eval(colIdentifier),
           100
         );
-        $(`#t${numberOfIterations}r1`).text(test);
-        data.push(test);
+        $(`#t${numberOfIterations}r1`).text(time);
+        data.push(time);
         numberOfIterations++;
       }
     }

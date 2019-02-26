@@ -1,6 +1,6 @@
 // Actions on array:
 function last(array) {
-  return array[array.length - 1];
+  array[array.length - 1];
 }
 
 function shuffle(array) {
@@ -13,11 +13,11 @@ function shuffle(array) {
     array[counter] = array[index];
     array[index] = temp;
   }
-  return array;
+  array;
 }
 
 function reverse(array) {
-  return array.reverse();
+  array.reverse();
 }
 
 function sort(array) {
