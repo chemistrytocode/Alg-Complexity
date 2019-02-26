@@ -16,7 +16,7 @@ function returnId(id) {
 
       while (numberOfIterations <= 20) {
         var time = timeTesting(
-          numberOfIterations * 5000,
+          numberOfIterations * 50000,
           eval(colIdentifier),
           100
         );
