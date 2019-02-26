@@ -41,6 +41,17 @@ describe("#bubblesort", function() {
   });
 });
 
+describe("#quicksort", function() {
+  it("Quick sort an array", function() {
+    var arr = [5, 4, 3, 2, 1];
+    expect(quickSort(arr)).toEqual([1, 2, 3, 4, 5]);
+  });
+  it("Quick sort a long array", function() {
+    var arr = [5, 4, 3, 2, 1, 4, 1, 9, 4, 2, 1, 1, 1,5, 4, 3, 2, 1, 4, 1, 9, 4, 2, 1, 1, 1];
+    expect(quickSort(arr)).toEqual([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 4, 4, 4, 4, 4, 4, 5, 5, 9, 9]);
+  });
+});
+
 describe("#duplicates", function() {
   it("Duplicates from sorted array", function() {
     var arr1 = [4, 5, 4, 3, 2]; // 4 Duplicate
@@ -70,7 +81,7 @@ describe("#duplicatesWithStandardSort", function() {
 });
 
 
-
+//
 // describe("#duplicatesWithQuickSort", function() {
 //   it("Duplicates from sorted array", function() {
 //     var arr1 = [4, 5, 4, 3, 2]; // 4 Duplicate

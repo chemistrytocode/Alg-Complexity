@@ -36,7 +36,7 @@ function returnId(id) {
       reset();
 
       function reset() {
-        index === colors.length-1 ? (index = 0) : index++;
+        index === colors.length - 1 ? (index = 0) : index++;
         data = [];
       }
 
