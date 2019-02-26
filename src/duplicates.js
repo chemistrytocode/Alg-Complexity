@@ -12,9 +12,22 @@ function duplicates(array) {
   return results;
 }
 
-//Sort Duplicate
 function duplicatesWithStandardSort(array) {
   var sorted_arr = array.sort();
+  var results = [];
+  for (var i = 0; i < sorted_arr.length; i++) {
+    if (
+      sorted_arr[i] === sorted_arr[i - 1] ||
+      sorted_arr[i] === sorted_arr[i + 1]
+    ) {
+      results.push(sorted_arr[i]);
+    }
+  }
+  return results;
+}
+
+function duplicatesWithQuickSort(array) {
+  var sorted_arr = quickSort(array);
   var results = [];
   for (var i = 0; i < sorted_arr.length; i++) {
     if (

@@ -12,11 +12,22 @@ describe("#last", function() {
   });
 });
 
-describe("#shuffle", function() {
-  it("should mix up the elements in an array", function() {
-    var arr = [1, 2, 3, 4, 5];
-    spyOn(Math, "random").and.returnValue(0.01);
-    expect(shuffle(arr)).toEqual([2, 3, 4, 5, 1]);
+describe("Shuffle functions", function() {
+
+  describe("#shuffle", function() {
+    it("should mix up the elements in an array", function() {
+      var arr = [1, 2, 3, 4, 5];
+      spyOn(Math, "random").and.returnValue(0.01);
+      expect(shuffle(arr)).toEqual([2, 3, 4, 5, 1]);
+    });
+  });
+
+  describe("#popShuffle", function() {
+    it("should mix up the elements in an array", function() {
+      var arr = [1, 2, 3, 4, 5];
+      spyOn(Math, "random").and.returnValue(0.3);
+      expect(popShuffle(arr)).toEqual([2, 3, 1, 4, 5]);
+    });
   });
 });
 
@@ -26,71 +37,80 @@ describe("#reverse", function() {
     expect(reverse(arr)).toEqual([5, 4, 3, 2, 1]);
   });
 });
-
-describe("#sort", function() {
-  it("Sort an array", function() {
-    var arr = [5, 4, 3, 2, 1];
-    expect(sort(arr)).toEqual([1, 2, 3, 4, 5]);
+describe("Types of sort", function() {
+  describe("#sort", function() {
+    it("Sort an array", function() {
+      var arr = [5, 4, 3, 2, 1];
+      expect(sort(arr)).toEqual([1, 2, 3, 4, 5]);
+    });
   });
-});
 
-describe("#bubblesort", function() {
-  it("Bubble sort an array", function() {
-    var arr = [5, 4, 3, 2, 1];
-    expect(bubblesort(arr)).toEqual([1, 2, 3, 4, 5]);
+  describe("#bubblesort", function() {
+    it("Bubble sort an array", function() {
+      var arr = [5, 4, 3, 2, 1];
+      expect(bubblesort(arr)).toEqual([1, 2, 3, 4, 5]);
+    });
   });
-});
 
-describe("#quicksort", function() {
-  it("Quick sort an array", function() {
-    var arr = [5, 4, 3, 2, 1];
-    expect(quickSort(arr)).toEqual([1, 2, 3, 4, 5]);
-  });
-  it("Quick sort a long array", function() {
-    var arr = [5, 4, 3, 2, 1, 4, 1, 9, 4, 2, 1, 1, 1,5, 4, 3, 2, 1, 4, 1, 9, 4, 2, 1, 1, 1];
-    expect(quickSort(arr)).toEqual([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 4, 4, 4, 4, 4, 4, 5, 5, 9, 9]);
-  });
-});
-
-describe("#duplicates", function() {
-  it("Duplicates from sorted array", function() {
-    var arr1 = [4, 5, 4, 3, 2]; // 4 Duplicate
-    var arr2 = [2, 4, 4, 1, 4]; // 4 Trips
-    var arr3 = [1, 2, 3, 4, 5]; // No Duplicate
-    var arr4 = ["Hello", 4, "Hello", 4, 1]; // 2 Duplicates
-    var arr5 = [5, 2, 3, 4, 5]; // No Duplicate
-    expect(duplicates(arr1)).toEqual([4, 4]);
-    expect(duplicates(arr2)).toEqual([4, 4, 4]);
-    expect(duplicates(arr3)).toEqual([]);
-    expect(duplicates(arr4)).toEqual(["Hello", 4, "Hello", 4]);
-    expect(duplicates(arr5)).toEqual([5,5]);
-  });
-});
-
-describe("#duplicatesWithStandardSort", function() {
-  it("Duplicates from sorted array", function() {
-    var arr1 = [4, 5, 4, 3, 2]; // 4 Duplicate
-    var arr2 = [5, 5, 2, 1, 5]; // 4 Trips
-    var arr3 = [1, 2, 3, 4, 5]; // No Duplicate
-    var arr4 = ["Hello", 4, "Hello", 4, 1]; // 2 Duplicates
-    expect(duplicatesWithStandardSort(arr1)).toEqual([4, 4]);
-    expect(duplicatesWithStandardSort(arr2)).toEqual([5, 5, 5]);
-    expect(duplicatesWithStandardSort(arr3)).toEqual([]);
-    expect(duplicatesWithStandardSort(arr4)).toEqual([4, 4, "Hello", "Hello"]);
+  describe("#quicksort", function() {
+    it("Quick sort an array", function() {
+      var arr = [5, 4, 3, 2, 1];
+      expect(quickSort(arr)).toEqual([1, 2, 3, 4, 5]);
+    });
+    it("Quick sort a long array", function() {
+      var arr = [5, 4, 3, 2, 1, 4, 1, 9, 4, 2, 1, 1, 1,5, 4, 3, 2, 1, 4, 1, 9, 4, 2, 1, 1, 1];
+      expect(quickSort(arr)).toEqual([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 4, 4, 4, 4, 4, 4, 5, 5, 9, 9]);
+    });
+    it("Quick sort handles random strings", function() {
+      var arr = [1, 7, "String", 5, 9, 6, "Howdy", 4];
+      expect(quickSort(arr)).toEqual([1, 4, 5, 6, 7, 9, "Howdy", "String"]);
+    });
   });
 });
 
 
-//
-// describe("#duplicatesWithQuickSort", function() {
-//   it("Duplicates from sorted array", function() {
-//     var arr1 = [4, 5, 4, 3, 2]; // 4 Duplicate
-//     var arr2 = [4, 4, 4, 1, 2]; // 4 Trips
-//     var arr3 = [1, 2, 3, 4, 5]; // No Duplicate
-//     var arr4 = ["Hello", 4, "Hello", 4, 1]; // 2 Duplicates
-//     expect(duplicatesWithStandardSort(arr1)).toEqual([4,4]);
-//     expect(duplicatesWithStandardSort(arr2)).toEqual([4, 4]);
-//     expect(duplicatesWithStandardSort(arr3)).toEqual([]);
-//     expect(duplicatesWithStandardSort(arr4)).toEqual([4, "Hello"]);
-//   });
-// });
+describe('Types of duplicate', function() {
+
+  describe("#duplicates", function() {
+    it("Duplicates from sorted array", function() {
+      var arr1 = [4, 5, 4, 3, 2]; // 4 Duplicate
+      var arr2 = [2, 4, 4, 1, 4]; // 4 Trips
+      var arr3 = [1, 2, 3, 4, 5]; // No Duplicate
+      var arr4 = ["Hello", 4, "Hello", 4, 1]; // 2 Duplicates
+      var arr5 = [5, 2, 3, 4, 5]; // No Duplicate
+      expect(duplicates(arr1)).toEqual([4, 4]);
+      expect(duplicates(arr2)).toEqual([4, 4, 4]);
+      expect(duplicates(arr3)).toEqual([]);
+      expect(duplicates(arr4)).toEqual(["Hello", 4, "Hello", 4]);
+      expect(duplicates(arr5)).toEqual([5,5]);
+    });
+  });
+
+  describe("#duplicatesWithStandardSort", function() {
+    it("Duplicates from sorted array", function() {
+      var arr1 = [4, 5, 4, 3, 2]; // 4 Duplicate
+      var arr2 = [5, 5, 2, 1, 5]; // 4 Trips
+      var arr3 = [1, 2, 3, 4, 5]; // No Duplicate
+      var arr4 = ["Hello", 4, "Hello", 4, 1]; // 2 Duplicates
+      expect(duplicatesWithStandardSort(arr1)).toEqual([4, 4]);
+      expect(duplicatesWithStandardSort(arr2)).toEqual([5, 5, 5]);
+      expect(duplicatesWithStandardSort(arr3)).toEqual([]);
+      expect(duplicatesWithStandardSort(arr4)).toEqual([4, 4, "Hello", "Hello"]);
+    });
+  });
+
+
+  describe("#duplicatesWithQuickSort", function() {
+    it("Duplicates from sorted array", function() {
+      var arr1 = [4, 5, 4, 3, 2]; // 4 Duplicate
+      var arr2 = [5, 5, 2, 1, 5]; // 4 Trips
+      var arr3 = [1, 2, 3, 4, 5]; // No Duplicate
+      var arr4 = [4, 4,"Hello", "Hello", 1]; // 2 Duplicates
+      expect(duplicatesWithQuickSort(arr1)).toEqual([4, 4]);
+      expect(duplicatesWithQuickSort(arr2)).toEqual([5, 5, 5]);
+      expect(duplicatesWithQuickSort(arr3)).toEqual([]);
+     expect(duplicatesWithQuickSort(arr4)).toEqual([4, 4, "Hello", "Hello"]);
+    });
+  });
+
+});
