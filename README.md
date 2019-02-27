@@ -5,6 +5,21 @@
 **Big O notation** is used in to describe the performance or complexity of an algorithm. Big O specifically describes the worst-case scenario, and can be used to describe the execution time required or the space used (e.g. in memory or on disk) by an algorithm.
 ![big_o_notation_graph](https://user-images.githubusercontent.com/44780483/53408265-014a7a00-39b6-11e9-91bd-1b60fb0b2e55.jpeg)
 
+Ranked from Best to Worst:
+__O(1)__ are constants, they are functions which work at a speed regardless of input size. __BEST__
+
+__O(log n)__ are logarithmic operations, they work by only look at fractions of the input and so still scale with input but at a very slow. __BEST__
+
+__O(n)__ are linear operations, the time it takes to completely directly correlates to the size of the input. __GOOD__
+
+__O(n log n)__ are combination of the logarithmic and linear operations, they consist of an outer linear iteration loop that contains inner logarithmic loop. __OK, SOMETIMES NECESSARY__
+
+__O(n^2)__ are operations that look at each input for each input, iterating over an array whilst currently in a loop that's iterating over an array. __BAD__
+
+__O(2^n)__ are recursive, they solve a problem of size N by recursively solving two smaller problems of size N-1. __REALLY BAD__
+
+__O(n!)__ are the worst, an example would be list all permutation of an array. __WORST__
+
 
 ## Benchmark Functions:
 ### The last() Function
