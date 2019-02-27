@@ -2,7 +2,6 @@ function reverse(array) {
   return array.reverse();
 }
 
-
 function newReverse(array) {
   const newArray = [];
   const len = array.length;
@@ -11,4 +10,13 @@ function newReverse(array) {
       newArray.push(item)
   }
   return newArray
+}
+
+
+function reverseByInvert(array) {
+  let newArray = [];
+  for(let item of array){
+    newArray = [item, ...newArray];
+  }
+  return newArray;
 }

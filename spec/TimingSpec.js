@@ -45,6 +45,13 @@ describe('Types of reverse', function() {
       expect(newReverse(arr)).toEqual([5, 4, 3, 2, 1]);
     });
   });
+
+  describe("#reverseByInvert", function() {
+    it("Reverse an array", function() {
+      var arr = [1, 2, 3, 4, 5];
+      expect(reverseByInvert(arr)).toEqual([5, 4, 3, 2, 1]);
+    });
+  });
 });
 
 describe("Types of sort", function() {
@@ -131,4 +138,11 @@ describe('Types of duplicate', function() {
     });
   });
 
+});
+
+describe('Types of duplicate', function() {
+  it('finds item that appears most frequently', function() {
+    var arr1 = ["hello", "fish", "hello", "tower", "fish", "fish"];
+    expect(freqWord(arr1)).toEqual("fish");
+  })
 });
