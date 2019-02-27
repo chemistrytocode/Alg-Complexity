@@ -28,7 +28,7 @@ The __.shuffle()__ function is slower more effected by it's number of inputs add
 The __.popShuffle()__ function is faster taking about half the resources of .shuffle() to achieve the same goal.
 
 ### The sort(), quickSort() and bubbleSort() Functions
-![sort vs quicksort vs bubblesort](https://user-images.githubusercontent.com/43698605/53496077-29f77000-3a99-11e9-93b9-dfd405517281.png)
+![sort methods](https://user-images.githubusercontent.com/43698605/53497219-9e331300-3a9b-11e9-8eef-af63eb6e3b9e.png)
 Sorting shows clear correlation between processing time and input size.
 
 The default __.sort()__ function is by far the quickest of the three functions however it also isn't sorting effectively. An array of [1,3,11,4,5] will be sorted [1,11,3,4,5] and therefore isn't a clear representation of the sorting function we require. The result is a logarithmic graph but looks like a constant when compared to the other two results.
