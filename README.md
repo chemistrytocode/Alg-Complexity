@@ -6,6 +6,7 @@
 ![big_o_notation_graph](https://user-images.githubusercontent.com/44780483/53408265-014a7a00-39b6-11e9-91bd-1b60fb0b2e55.jpeg)
 
 Ranked from Best to Worst:
+
 __O(1)__ are constants, they are functions which work at a speed regardless of input size. __BEST__
 
 __O(log n)__ are logarithmic operations, they work by only look at fractions of the input and so still scale with input but at a very slow. __BEST__
