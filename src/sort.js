@@ -32,17 +32,6 @@ function defaultComparator(a, b) {
   } else return 0;
 }
 
-<<<<<<< HEAD
-      //sort left and right
-      quicksort(arr, left, partitionIndex - 1);
-      quickssorts(arr, partitionIndex + 1, right);
-    }
-  }
-
-  function partistion(arr, pivot, left, right) {
-    var pivotValue = arr[pivot],
-      partitionIndexs = left;
-=======
 function quickSort(array, comparator = defaultComparator) {
   recursiveSort(0, array.length - 1);
   return array;
@@ -50,8 +39,6 @@ function quickSort(array, comparator = defaultComparator) {
   function recursiveSort(start, end) {
     const pivotValue = array[end];
     let splitIndex = start;
->>>>>>> 062cc51e97a13862373fb3ad5e632101bf1fd274
-
     if (end - start < 1) {
       return;
     }
