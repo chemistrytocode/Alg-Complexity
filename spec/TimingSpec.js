@@ -3,6 +3,10 @@ describe("#createArray", function() {
     spyOn(Math, "random").and.returnValue(0.01);
     expect(createArray(5)).toEqual([2, 2, 2, 2, 2]);
   });
+  it("Generate a boolean array", function() {
+    spyOn(Math, "random").and.returnValue(0.01);
+    expect(createArray(5)).toEqual([2, 2, 2, 2, 2]);
+  });
 });
 
 describe("#last", function() {
@@ -91,6 +95,22 @@ describe("Types of sort", function() {
       expect(quickSort(arr)).toEqual([1, 2, 4, 7, 12, 20]);
     });
   });
+
+  describe("0/1 sorting", function() {
+
+    it("0/1 sort an array", function() {
+      var arr = [0,1,1,0,0,1];
+      expect(booleanSort(arr)).toEqual([0,0,0,1,1,1]);
+    });
+    // it("0/1 sort an array", function() {
+    //   var arr = [0,1,1,0,0,1];
+    //   expect(booleanSort2(arr)).toEqual([0,0,0,1,1,1]);
+    // });
+    // it("0/1 sort an array", function() {
+    //   var arr = [1, 0, 0, 1, 1, 1, 0, 0,1,1,0,0,1, 0];
+    //   expect(booleanSort2(arr)).toEqual([0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1]);
+    // });
+  })
 });
 
 
@@ -144,5 +164,11 @@ describe('Types of duplicate', function() {
   it('finds item that appears most frequently', function() {
     var arr1 = ["hello", "fish", "hello", "tower", "fish", "fish"];
     expect(freqWord(arr1)).toEqual("fish");
+  })
+});
+describe('Types of duplicate', function() {
+  it('finds item that appears most frequently', function() {
+    var arr1 = ["hello", "fish", "hello", "tower", "fish", "fish"];
+    expect(mostFreqWord(arr1)).toEqual("fish");
   })
 });

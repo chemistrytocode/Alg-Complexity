@@ -3,6 +3,22 @@ function sort(array) {
   return array.sort();
 }
 
+function booleanSort(array) {
+    trues = []
+    falses =[]
+    array.forEach( num => {
+      num === 0 ? trues.push(num) : falses.push(num)
+    })
+    return [...trues, ...falses ]
+}
+
+// function booleanSort2(array) {
+//     array.forEach((num, index) => {
+//       if(num === 0) { array.splice(index, 1); array.unshift(num) }
+//     })
+//     return array
+// }
+
 // // quicksort:
 // function quickSort(arr) {
 //   quicksort(arr);

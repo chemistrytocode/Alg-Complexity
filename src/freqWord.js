@@ -1,5 +1,6 @@
 function freqWord(array) {
-  return array.reduce((acc, cur, ind, arr) => {
+  return array
+    .reduce((acc, cur, ind, arr) => {
       if (arr.indexOf(cur) === ind) {
         return [...acc, [cur, 1]];
       } else {
@@ -15,9 +16,27 @@ function freqWord(array) {
     .map(cur => cur[0])[0];
 }
 
+function mostFreqWord(array) {
+  var hash = {};
+  for (var i = 0; i < array.length; i++) {
+    if (hash[array[i]]) {
+      hash[array[i]] += 1;
+    } else {
+      hash[array[i]] = 1;
+    }
+  }
+  let maxvalue = 0;
+  let maxstring = "";
+  Object.keys(hash).forEach(function(key) {
+    if (hash[key] > maxvalue) {
+      maxvalue = hash[key], maxstring = key;
+    }
+  });
+  return maxstring;
+}
 //
-// var hash = [];
-// for (var i = 0; i < array.length; i++) {
-//   if ( hash[array[i]]) {hash[array[i]] += 1}
-//   else { hash[array[i]] = 1 }
-// }
+// maxstring = "";
+// Object.keys(hash).forEach(function(key) {
+//   if (hash[key] > hash[maxstring]) {
+//    maxstring = key;
+//   }
