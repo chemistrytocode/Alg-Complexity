@@ -38,7 +38,7 @@ The __quickSort()__ function is a very clever and efficient solution to sorting.
 The __bubbleSort()__ function is ridiculously slow and is a good example of a bad O(n^2) algorithm which shows a quadratic graph. The code works by doing a complete backwards iteration for every step of a forward iteration which is naturally very inefficient.
 
 ### The duplicate(), duplicatesWithQuickSort() and duplicatesWithStandardSort() Functions
-![duplicate vs duplicateswithquicksort vs duplicateswithstandardsort](https://user-images.githubusercontent.com/43698605/53486679-4d162580-3a81-11e9-9472-0e4f4d1b8d67.png)
+![duplicates](https://user-images.githubusercontent.com/43698605/53496996-1a792680-3a9b-11e9-8e18-7683a3cfa093.png)
 
 The __duplicates()__ function works using two loops, for each forward step in the first loop the second completes an entire iteration checking for matching. Using two loops is relatively inefficient and the result is a graph which shows a linear correlation between input size and time.
 
