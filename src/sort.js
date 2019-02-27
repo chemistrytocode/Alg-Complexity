@@ -39,7 +39,6 @@ function quickSort(array, comparator = defaultComparator) {
   function recursiveSort(start, end) {
     const pivotValue = array[end];
     let splitIndex = start;
-
     if (end - start < 1) {
       return;
     }
