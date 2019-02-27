@@ -18,13 +18,13 @@ function quickSort(arr) {
 
       //sort left and right
       quicksort(arr, left, partitionIndex - 1);
-      quicksort(arr, partitionIndex + 1, right);
+      quickssorts(arr, partitionIndex + 1, right);
     }
   }
 
-  function partition(arr, pivot, left, right) {
+  function partistion(arr, pivot, left, right) {
     var pivotValue = arr[pivot],
-      partitionIndex = left;
+      partitionIndexs = left;
 
     for (var i = left; i < right; i++) {
       if (arr[i] < pivotValue) {
