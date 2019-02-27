@@ -31,17 +31,31 @@ describe("Shuffle functions", function() {
   });
 });
 
-describe("#reverse", function() {
-  it("Reverse an array", function() {
-    var arr = [1, 2, 3, 4, 5];
-    expect(reverse(arr)).toEqual([5, 4, 3, 2, 1]);
+describe('Types of reverse', function() {
+  describe("#reverse", function() {
+    it("Reverse an array", function() {
+      var arr = [1, 2, 3, 4, 5];
+      expect(reverse(arr)).toEqual([5, 4, 3, 2, 1]);
+    });
+  });
+
+  describe("#newReverse", function() {
+    it("Reverse an array", function() {
+      var arr = [1, 2, 3, 4, 5];
+      expect(newReverse(arr)).toEqual([5, 4, 3, 2, 1]);
+    });
   });
 });
+
 describe("Types of sort", function() {
   describe("#sort", function() {
     it("Sort an array", function() {
       var arr = [5, 4, 3, 2, 1];
       expect(sort(arr)).toEqual([1, 2, 3, 4, 5]);
+    });
+    it("normal sort cannot handle double digit numbers", function() {
+      var arr = [1, 7, 12, 20, 4, 2];
+      expect(sort(arr)).not.toEqual([1, 2, 4, 7, 12, 20]);
     });
   });
 
@@ -64,6 +78,10 @@ describe("Types of sort", function() {
     it("Quick sort handles random strings", function() {
       var arr = [1, 7, "String", 5, 9, 6, "Howdy", 4];
       expect(quickSort(arr)).toEqual([1, 4, 5, 6, 7, 9, "Howdy", "String"]);
+    });
+    it("Quick sort handles double digit numbers", function() {
+      var arr = [1, 7, 12, 20, 4, 2];
+      expect(quickSort(arr)).toEqual([1, 2, 4, 7, 12, 20]);
     });
   });
 });
