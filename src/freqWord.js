@@ -34,9 +34,3 @@ function mostFreqWord(array) {
   });
   return maxstring;
 }
-//
-// maxstring = "";
-// Object.keys(hash).forEach(function(key) {
-//   if (hash[key] > hash[maxstring]) {
-//    maxstring = key;
-//   }

@@ -12,6 +12,20 @@ function newReverse(array) {
   return newArray
 }
 
+function jeddReverse(arr) {
+  var j = arr.length - 1
+  for (var i = 0; i < arr.length; i++) {
+    if (i >= j) {
+      break
+    }
+    var obj = arr[i]
+    arr[i] = arr[j]
+    arr[j] = obj
+    j--
+  }
+  return arr
+}
+
 
 function reverseByInvert(array) {
   let newArray = [];

@@ -4,6 +4,8 @@ var datasets = [];
 var data = [];
 var index = 0;
 
+var testsize = 50000;
+
 function returnId(id) {
   var type = id;
   generateResults();
@@ -23,7 +25,7 @@ function returnId(id) {
 
       while (numberOfIterations <= 20) {
         var time = timeTesting(
-          numberOfIterations * 500,
+          numberOfIterations * testsize,
           eval(colIdentifier),
           100
         );
@@ -60,26 +62,26 @@ function returnId(id) {
     type: "line",
     data: {
       labels: [
-        "5000",
-        "10000",
-        "15000",
-        "20000",
-        "25000",
-        "30000",
-        "35000",
-        "40000",
-        "45000",
-        "50000",
-        "55000",
-        "60000",
-        "65000",
-        "70000",
-        "75000",
-        "80000",
-        "85000",
-        "90000",
-        "95000",
-        "100000"
+        testsize * 1,
+        testsize * 2,
+        testsize * 3,
+        testsize * 4,
+        testsize * 5,
+        testsize * 6,
+        testsize * 7,
+        testsize * 8,
+        testsize * 9,
+        testsize * 10,
+        testsize * 11,
+        testsize * 12,
+        testsize * 13,
+        testsize * 14,
+        testsize * 15,
+        testsize * 16,
+        testsize * 17,
+        testsize * 18,
+        testsize * 19,
+        testsize * 20
       ],
       datasets: datasets
     },
