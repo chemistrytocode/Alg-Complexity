@@ -34,3 +34,39 @@ function mostFreqWord(array) {
   });
   return maxstring;
 }
+
+// FirstTwoFreqWords
+function firstTwoFreqWords(array) {
+  array.reverse();
+  var hash = convertToHash(array);
+  return displayWords(hash);
+}
+
+// FTFW Helper
+function convertToHash(array) {
+  hash = {};
+  for (var i = 0; i < array.length; i++) {
+    if (hash[array[i]]) {
+      hash[array[i]] += 1;
+    } else {
+      hash[array[i]] = 1;
+    }
+  }
+  return hash;
+}
+
+// FTFW Helper
+function displayWords(hash) {
+  var words = Object.keys(hash);
+  var values = Object.values(hash);
+  var valLength = values.length
+  if (valLength === 1) {
+    return words[0];
+  } else if (valLength === 2) {
+    return `${words[1]}, ${words[0]}`;
+  } else if (valLength > 2 && values[0] === values[1]) {
+    return `${words[2]}, ${words[1]}, ${words[0]}`;
+  } else {
+    return `${words[2]}, ${words[1]}`;
+  }
+}

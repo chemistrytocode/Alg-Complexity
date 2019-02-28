@@ -39,3 +39,18 @@ function duplicatesWithQuickSort(array) {
   }
   return results;
 }
+
+function setDuplicate(array) {
+  let set = [...new Set(array)]
+  console.log(set)
+  for(var i = 0; i < array.length; i++) {
+    for(var j = 0; j < set.length; j++) {
+      if(array[i] === set[i]) {
+        array.slice(i, 1);
+        console.log("Slice!")
+        break;
+      }
+    }
+  }
+  return array;
+}
