@@ -29,8 +29,8 @@ function jeddReverse(arr) {
 
 function reverseByInvert(array) {
   let newArray = [];
-  for(let item of array){
+  array.forEach( item => {
     newArray = [item, ...newArray];
-  }
+  })
   return newArray;
 }
